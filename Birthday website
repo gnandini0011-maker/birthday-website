@@ -1,0 +1,31 @@
+src/components/Countdown.jsx
+const targetDate = new Date("2026-05-07T00:00:00");
+"2026-05-07T00:00:00"
+ ↓    ↓  ↓  ↓  ↓  ↓
+ Year Mo Day Hr Min Sec
+src/components/MessageCard.jsx
+const recipientName = "Chitransh";
+const senderName = "Nandini";
+const message = `Happy Birthday my love 💗  
+You are my favorite person, my happiness, and my everything 🥺  
+Even miles away, you make my heart feel so close to you ✨  
+I love you endlessly ❤️...`;
+src/components/Countdown.jsx
+{/* ⚠️ TEST BUTTON - delete it from here⚠️ */}
+<button
+  className="test-button"
+  onClick={onBirthdayReached}
+  title="Skip countdown and see celebration"
+>
+  ��� Test Celebration
+</button>
+{/* ⚠️ END TEST BUTTON - DELETE UP TO HERE ⚠️ */}
+Developer Tools (F12)
+    ↓
+Application/Storage Tab
+    ↓
+Local Storage → http://localhost:5173
+    ↓
+Right-click "birthdayReached" → Delete
+    ↓
+Refresh page (Ctrl + R)
