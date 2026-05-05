@@ -1,31 +1,56 @@
-src/components/Countdown.jsx
-const targetDate = new Date("2026-05-07T00:00:00");
-"2026-05-07T00:00:00"
- ↓    ↓  ↓  ↓  ↓  ↓
- Year Mo Day Hr Min Sec
-src/components/MessageCard.jsx
-const recipientName = "Chitransh";
-const senderName = "Nandini";
-const message = `Happy Birthday my love 💗  
-You are my favorite person, my happiness, and my everything 🥺  
-Even miles away, you make my heart feel so close to you ✨  
-I love you endlessly ❤️...`;
-src/components/Countdown.jsx
-{/* ⚠️ TEST BUTTON - delete it from here⚠️ */}
-<button
-  className="test-button"
-  onClick={onBirthdayReached}
-  title="Skip countdown and see celebration"
->
-  ��� Test Celebration
-</button>
-{/* ⚠️ END TEST BUTTON - DELETE UP TO HERE ⚠️ */}
-Developer Tools (F12)
-    ↓
-Application/Storage Tab
-    ↓
-Local Storage → http://localhost:5173
-    ↓
-Right-click "birthdayReached" → Delete
-    ↓
-Refresh page (Ctrl + R)
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Happy Birthday 💗</title>
+  <style>
+    body {
+      text-align: center;
+      background: #ffe6e6;
+      font-family: Arial;
+    }
+    h1 { color: #ff4d6d; }
+    .card {
+      background: white;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Countdown for You 💗</h1>
+<h2 id="countdown"></h2>
+
+<div class="card">
+  <h2>Happy Birthday Chitransh 💗</h2>
+  <p>
+    You are my favorite person, my happiness, and my everything 🥺<br>
+    Even miles away, you make my heart feel so close to you ✨<br>
+    I love you endlessly ❤️
+  </p>
+  <p>- Nandini 💌</p>
+</div>
+
+<script>
+const targetDate = new Date("2026-05-07T00:00:00").getTime();
+
+setInterval(() => {
+  const now = new Date().getTime();
+  const diff = targetDate - now;
+
+  const days = Math.floor(diff / (1000*60*60*24));
+  const hours = Math.floor((diff % (1000*60*60*24))/(1000*60*60));
+  const minutes = Math.floor((diff % (1000*60*60))/(1000*60));
+  const seconds = Math.floor((diff % (1000*60))/1000);
+
+  document.getElementById("countdown").innerHTML =
+    days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+}, 1000);
+</script>
+
+</body>
+</html>
